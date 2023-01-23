@@ -4,7 +4,7 @@ import { Button, Card, Col, Dropdown, Input, Menu, Modal, Row, Table, Tag } from
 import { inject, observer } from 'mobx-react';
 
 import AppComponentBase from '../../components/AppComponentBase';
-import CreateOrUpdateUser from './components/createOrUpdateUser';
+// import CreateOrUpdateUser from './components/createOrUpdateUser';
 import { EntityDto } from '../../services/dto/entityDto';
 import { L } from '../../lib/abpUtility';
 import Stores from '../../stores/storeIdentifier';
@@ -70,9 +70,9 @@ class User extends AppComponentBase<IUserProps, IUserState> {
     this.setState({ userId: entityDto.id });
     this.Modal();
 
-    setTimeout(() => {
-      this.formRef.current?.setFieldsValue({ ...this.props.userStore.editUser });
-    }, 100);
+    // setTimeout(() => {
+    //   this.formRef.current?.setFieldsValue({ ...this.props.userStore.editUser });
+    // }, 100);
   }
 
   delete(input: EntityDto) {
@@ -195,7 +195,7 @@ class User extends AppComponentBase<IUserProps, IUserState> {
             />
           </Col>
         </Row>
-        <CreateOrUpdateUser
+        {/* <CreateOrUpdateUser
           formRef={this.formRef}
           visible={this.state.modalVisible}
           onCancel={() => {
@@ -207,7 +207,7 @@ class User extends AppComponentBase<IUserProps, IUserState> {
           modalType={this.state.userId === 0 ? 'edit' : 'create'}
           onCreate={this.handleCreate}
           roles={this.props.userStore.roles}
-        />
+        /> */}
       </Card>
     );
   }
