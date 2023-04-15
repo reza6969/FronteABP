@@ -70,12 +70,12 @@ class Role extends AppComponentBase<IRoleProps, IRoleState> {
     this.setState({ roleId: entityDto.id });
     this.Modal();
 
-    // setTimeout(() => {
-    //   this.formRef.current?.setFieldsValue({
-    //     ...this.props.roleStore.roleEdit.role,
-    //     grantedPermissions: this.props.roleStore.roleEdit.grantedPermissionNames,
-    //   });
-    // }, 100);
+    setTimeout(() => {
+      this.formRef.current?.setFieldsValue({
+        ...this.props.roleStore.roleEdit.role,
+        grantedPermissions: this.props.roleStore.roleEdit.grantedPermissionNames,
+      });
+    }, 100);
   }
 
   delete(input: EntityDto) {
